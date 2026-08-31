@@ -7,7 +7,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/screen_title.dart';
 
-const _languages = ['Ugandan English', 'Luganda', 'Runyankole', 'Kiswahili'];
+const _languages = ['English', 'Luganda', 'Lusoga', 'Kiswahili'];
 
 class WelcomeConsentScreen extends StatefulWidget {
   const WelcomeConsentScreen({super.key});
@@ -33,11 +33,6 @@ class _WelcomeConsentScreenState extends State<WelcomeConsentScreen> {
               const Text(
                 'Which language do you speak most?',
                 style: AppTextStyles.screenHeadline,
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'You can change this later, or switch mid-conversation.',
-                style: AppTextStyles.body,
               ),
               const SizedBox(height: 24),
               for (final language in _languages) ...[
