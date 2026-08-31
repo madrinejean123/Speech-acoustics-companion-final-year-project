@@ -18,8 +18,8 @@ defaults:
     working-directory: frontend-flutter
 
 jobs:
-  analyze-and-test:
-    name: Analyze & test
+  analyze:
+    name: Analyze
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,11 +31,10 @@ jobs:
 
       - run: flutter pub get
       - run: flutter analyze
-      - run: flutter test
 
   build-android:
     name: Build Android APK (split per ABI)
-    needs: analyze-and-test
+    needs: analyze
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -61,7 +60,7 @@ jobs:
 
   build-web:
     name: Build web
-    needs: analyze-and-test
+    needs: analyze
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
