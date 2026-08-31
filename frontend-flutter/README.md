@@ -47,7 +47,8 @@ flutter test
 
 ## CI
 
-`.github/workflows/flutter-ci.yml` runs `flutter analyze` + `flutter
-test` on every push/PR touching `frontend-flutter/**`, then builds an
-Android APK (`--split-per-abi`, one per ABI) and a web build, both
-uploaded as artifacts.
+`.github/workflows/flutter-ci.yml` runs `flutter analyze` on every
+push/PR touching `frontend-flutter/**`, then builds an Android APK
+(`--split-per-abi`, one per ABI, uploaded as an artifact) and a web
+build. On pushes to `main`, the web build also deploys to GitHub
+Pages: https://madrinejean123.github.io/Speech-acoustics-companion-final-year-project/
