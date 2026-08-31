@@ -3,7 +3,7 @@ enum AssistMode { askMeFirst, speakWhenSure, onlyWhenAsked }
 class UserSettings {
   const UserSettings({
     this.assistMode = AssistMode.askMeFirst,
-    this.language = 'Ugandan English',
+    this.language = 'English',
     this.offlineOnly = true,
     this.confidenceThreshold = 0.9,
   });
