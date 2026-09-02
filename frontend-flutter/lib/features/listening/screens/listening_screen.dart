@@ -40,17 +40,23 @@ class _ListeningScreenState extends State<ListeningScreen>
     return Scaffold(
       backgroundColor: const Color(0xFFF7F9FC),
 
+      // ------------------------------------------------------------
+      // APP BAR
+      // ------------------------------------------------------------
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
         foregroundColor: const Color(0xFF172033),
+        centerTitle: true,
         title: const Text(
           'Listening',
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
         ),
-        centerTitle: true,
       ),
 
+      // ------------------------------------------------------------
+      // BODY
+      // ------------------------------------------------------------
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -59,7 +65,9 @@ class _ListeningScreenState extends State<ListeningScreen>
               children: [
                 const SizedBox(height: 30),
 
-                // Status
+                // --------------------------------------------------
+                // LISTENING STATUS
+                // --------------------------------------------------
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
@@ -87,7 +95,9 @@ class _ListeningScreenState extends State<ListeningScreen>
 
                 const SizedBox(height: 45),
 
-                // Animated microphone
+                // --------------------------------------------------
+                // ANIMATED MICROPHONE
+                // --------------------------------------------------
                 AnimatedBuilder(
                   animation: _scaleAnimation,
                   builder: (context, child) {
@@ -126,6 +136,9 @@ class _ListeningScreenState extends State<ListeningScreen>
 
                 const SizedBox(height: 35),
 
+                // --------------------------------------------------
+                // MAIN HEADING
+                // --------------------------------------------------
                 const Text(
                   'Speak naturally',
                   textAlign: TextAlign.center,
@@ -138,6 +151,9 @@ class _ListeningScreenState extends State<ListeningScreen>
 
                 const SizedBox(height: 10),
 
+                // --------------------------------------------------
+                // DESCRIPTION
+                // --------------------------------------------------
                 const Text(
                   'I’m listening to your speech and will help '
                   'when a speech block or disfluency is detected.',
@@ -151,7 +167,9 @@ class _ListeningScreenState extends State<ListeningScreen>
 
                 const SizedBox(height: 30),
 
-                // Live transcription card
+                // --------------------------------------------------
+                // LIVE TRANSCRIPTION CARD
+                // --------------------------------------------------
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(18),
@@ -202,9 +220,14 @@ class _ListeningScreenState extends State<ListeningScreen>
                   ),
                 ),
 
-                const Spacer(),
+                // IMPORTANT:
+                // Do NOT use Spacer() here because this Column
+                // is inside a SingleChildScrollView.
+                const SizedBox(height: 30),
 
-                // Testing button
+                // --------------------------------------------------
+                // SIMULATE BLOCK BUTTON
+                // --------------------------------------------------
                 TextButton.icon(
                   onPressed: () {
                     context.go(Routes.stuck);
@@ -218,7 +241,9 @@ class _ListeningScreenState extends State<ListeningScreen>
 
                 const SizedBox(height: 10),
 
-                // Stop button
+                // --------------------------------------------------
+                // STOP LISTENING BUTTON
+                // --------------------------------------------------
                 SizedBox(
                   width: double.infinity,
                   height: 56,
