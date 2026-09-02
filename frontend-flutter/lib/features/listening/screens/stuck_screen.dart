@@ -47,7 +47,7 @@ class StuckScreen extends StatelessWidget {
                     color: const Color(0xFFFFF1E8),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFF28C28).withOpacity(0.12),
+                        color: const Color(0xFFF28C28).withValues(alpha: 0.12),
                         blurRadius: 25,
                         spreadRadius: 5,
                       ),
@@ -112,7 +112,7 @@ class StuckScreen extends StatelessWidget {
                     border: Border.all(color: const Color(0xFFE4E8F0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.04),
+                        color: Colors.black.withValues(alpha: 0.04),
                         blurRadius: 15,
                         offset: const Offset(0, 6),
                       ),
@@ -185,7 +185,7 @@ class StuckScreen extends StatelessWidget {
                           width: 42,
                           height: 42,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.16),
+                            color: Colors.white.withValues(alpha: 0.16),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Icon(

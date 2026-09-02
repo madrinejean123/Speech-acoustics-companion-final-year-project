@@ -111,7 +111,9 @@ class _ListeningScreenState extends State<ListeningScreen>
                           color: const Color(0xFFE8EEFF),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFF4F6EF7).withOpacity(0.15),
+                              color: const Color(
+                                0xFF4F6EF7,
+                              ).withValues(alpha: 0.15),
                               blurRadius: 35,
                               spreadRadius: 12,
                             ),
@@ -179,7 +181,7 @@ class _ListeningScreenState extends State<ListeningScreen>
                     border: Border.all(color: const Color(0xFFE4E8F0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.04),
+                        color: Colors.black.withValues(alpha: 0.04),
                         blurRadius: 12,
                         offset: const Offset(0, 5),
                       ),
