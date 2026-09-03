@@ -18,6 +18,14 @@ void main() {
           builder: (context, state) =>
               const Scaffold(body: Text('Listening')),
         ),
+        GoRoute(
+          path: Routes.history,
+          builder: (context, state) => const Scaffold(body: Text('History')),
+        ),
+        GoRoute(
+          path: Routes.control,
+          builder: (context, state) => const Scaffold(body: Text('Control')),
+        ),
       ],
     );
     return MaterialApp.router(routerConfig: router);
@@ -41,5 +49,27 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Listening'), findsOneWidget);
+  });
+
+  testWidgets('tapping the history icon navigates to History', (
+    tester,
+  ) async {
+    await tester.pumpWidget(buildApp());
+
+    await tester.tap(find.byIcon(Icons.history));
+    await tester.pumpAndSettle();
+
+    expect(find.text('History'), findsOneWidget);
+  });
+
+  testWidgets('tapping the control icon navigates to Control', (
+    tester,
+  ) async {
+    await tester.pumpWidget(buildApp());
+
+    await tester.tap(find.byIcon(Icons.tune));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Control'), findsOneWidget);
   });
 }

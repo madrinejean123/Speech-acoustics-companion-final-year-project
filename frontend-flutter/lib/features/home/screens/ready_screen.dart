@@ -19,7 +19,26 @@ class ReadyScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const ScreenTitle('Speech companion'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const ScreenTitle('Speech companion'),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.history, color: AppColors.ink),
+                        tooltip: 'History',
+                        onPressed: () => context.go(Routes.history),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.tune, color: AppColors.ink),
+                        tooltip: 'Control',
+                        onPressed: () => context.go(Routes.control),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
               const Spacer(),
               Center(
                 child: Container(
